@@ -1,7 +1,6 @@
 from unittest import TestCase
 
-from os.path import isdir, isfile, expanduser, split, relpath, join, commonprefix, normpath
-from os      import listdir, sep, makedirs
+from os.path import commonprefix
 
 
 class COMPLETION_TYPE:
