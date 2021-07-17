@@ -28,6 +28,7 @@ def load_settings():
     global OPEN_FOLDERS_IN_NEW_WINDOW
     global HISTORY_ENTRIES
     global CASE_SENSITIVE
+    global ENABLE_LCS
 
     settings = sublime.load_settings(SETTINGS_FILE)
 
@@ -35,6 +36,7 @@ def load_settings():
     OPEN_FOLDERS_IN_NEW_WINDOW = settings.get('open_folders_in_new_window')
     CASE_SENSITIVE  = settings.get('case_sensitive')
     HISTORY_ENTRIES = settings.get('history_entries')
+    ENABLE_LCS = settings.get('enable_lcs')
 
 
 def is_sublime_text_1():
@@ -57,7 +59,7 @@ def get_completion(path):
         return path, COMPLETION_TYPE.NoMatch
 
     directory_listing = listdir(expanduser(directory))
-    new_filename, completion_type = complete_path(filename, directory_listing, CASE_SENSITIVE)
+    new_filename, completion_type = complete_path(filename, directory_listing, CASE_SENSITIVE, ENABLE_LCS)
 
     if new_filename != '' and isdir(expanduser(join(directory, new_filename))):
         new_filename += sep
