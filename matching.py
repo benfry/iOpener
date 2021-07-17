@@ -10,11 +10,12 @@ class COMPLETION_TYPE:
     NoMatch = 2
 
 
-def complete_path(filename, directory_listing, case_sensitive=False):
-    lcs_completion = get_lcs_completion_or_none(filename, directory_listing)
+def complete_path(filename, directory_listing, case_sensitive=False, enable_lcs=False):
+    if enable_lcs:
+        lcs_completion = get_lcs_completion_or_none(filename, directory_listing)
 
-    if lcs_completion is not None:
-        return lcs_completion, COMPLETION_TYPE.Complete
+        if lcs_completion is not None:
+            return lcs_completion, COMPLETION_TYPE.Complete
 
     matches = get_matches(filename, directory_listing, case_sensitive)
 

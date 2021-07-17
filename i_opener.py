@@ -3,7 +3,10 @@ A package to make opening files in Sublime Text a little bit less painful.
 Licensed under GPL V2.
 
 Written by Ross Hemsley and other collaborators 2013.
+
 Forked from https://github.com/nvaytet/iOpener
+To resolve https://github.com/rosshemsley/iOpener/issues/37
+https://github.com/rosshemsley/iOpener/pull/38
 
 Added "enable_lcs" preference (turns them off by default)
 https://github.com/benfry/iOpener
