@@ -3,10 +3,15 @@ A package to make opening files in Sublime Text a little bit less painful.
 Licensed under GPL V2.
 
 Written by Ross Hemsley and other collaborators 2013.
+Forked from https://github.com/nvaytet/iOpener
+
+Added "enable_lcs" preference (turns them off by default)
+https://github.com/benfry/iOpener
 """
 
-import sublime, sublime_plugin, time
-from os.path import isdir, isfile, expanduser, split, relpath, join, commonprefix, normpath
+import sublime, sublime_plugin
+
+from os.path import isdir, isfile, expanduser, split, join
 from os      import listdir, sep, makedirs
 
 from .matching import complete_path, COMPLETION_TYPE, get_matches
